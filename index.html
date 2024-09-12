@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Gray Tinting with CSS Variables</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tint Gray with Primary Color</h1>
+      <label for="colorInput">Enter Hex Code:</label>
+      <input
+        type="text"
+        id="colorInput"
+        placeholder="#777777"
+        maxlength="7"
+        value="#777777"
+      />
+      <button class="generate" id="generateButton">Generate Colors</button>
+      <div id="message"></div>
+      <div class="color-boxes">
+        <div class="color-box" id="darkGray">
+          <p>Text-Color</p>
+        </div>
+        <div class="color-box" id="mediumGray">
+          <p>Medium Gray</p>
+        </div>
+        <div class="color-box" id="lightGray">
+          <p>Light Gray</p>
+        </div>
+        <div class="color-box dark-text" id="lightestGray">
+          <p>Lightest Gray</p>
+        </div>
+        <div class="color-box dark-text" id="backgroundColor">
+          <p>Background Color</p>
+        </div>
+      </div>
+    </div>
+    <h2>Hello There</h2>
+    <button>Click Me!</button>
+    <script src="script.js"></script>
+  </body>
+</html>
