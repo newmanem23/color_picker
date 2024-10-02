@@ -63,7 +63,7 @@ function updateColors() {
   const root = document.documentElement;
 
   // Update the primary color
-  root.style.setProperty("--primary-color", primaryColor);
+  root.style.setProperty("--color-primary-texp", primaryColor);
 
   // Grays and almost white color
   const darkGray = tintGrayWithPrimary("#333333", primaryColor);
@@ -73,7 +73,7 @@ function updateColors() {
   const almostWhite = tintGrayWithPrimary("#f9f9f9", primaryColor); // Inverse tinting
 
   // Update the CSS variables with the new color values
-  root.style.setProperty("--primary-color", primaryColor);
+  root.style.setProperty("--color-primary-texp", primaryColor);
   root.style.setProperty("--text-color", darkGray);
   root.style.setProperty("--medium-gray-color", mediumGray);
   root.style.setProperty("--light-gray-color", lightGray);

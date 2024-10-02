@@ -7,39 +7,53 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Brand Color</h1>
-      <label for="colorInput">Enter Hex Code:</label>
-      <input
-        type="text"
-        id="colorInput"
-        placeholder="#777777"
-        maxlength="7"
-        value="#777777"
-      />
-      <button class="generate" id="generateButton">Generate Colors</button>
-      <div id="message"></div>
-      <div class="color-boxes">
-        <div class="color-box" id="darkGray">
-          <p>Text Color</p>
-          <p>#333333</p>
+    <div class="page">
+      <div class="container">
+        <h1>Brand Color</h1>
+        <div class="input">
+          <label for="colorInput">Enter Hex Code:</label>
+          <input
+            type="text"
+            id="colorInput"
+            placeholder="#777777"
+            maxlength="7"
+            value="#777777"
+          />
+          <button class="generate" id="generateButton">Generate Colors</button>
         </div>
-        <div class="color-box" id="mediumGray">
-          <p>Medium Gray</p>
-        </div>
-        <div class="color-box" id="lightGray">
-          <p>Light Gray</p>
-        </div>
-        <div class="color-box dark-text" id="lightestGray">
-          <p>Lightest Gray</p>
-        </div>
-        <div class="color-box dark-text" id="backgroundColor">
-          <p>Background Color</p>
+        <div id="message"></div>
+        <div class="color-boxes">
+          <div class="color-box" id="darkGray">
+            <p>Text Color</p>
+            <p>#333333</p>
+          </div>
+          <div class="color-box" id="mediumGray">
+            <p>Medium Gray</p>
+          </div>
+          <div class="color-box" id="lightGray">
+            <p>Light Gray</p>
+          </div>
+          <div class="color-box dark-text" id="lightestGray">
+            <p>Lightest Gray</p>
+          </div>
+          <div class="color-box dark-text" id="backgroundColor">
+            <p>Background Color</p>
+          </div>
         </div>
       </div>
+      <div class="styled-content">
+        <h3>Hello There</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+          adipisci ab nisi ut unde tenetur placeat obcaecati quod voluptate
+          similique exercitationem praesentium dolorum nostrum assumenda,
+          impedit, eius quia eum expedita fuga tempora repellat nobis asperiores
+          quaerat? Vero, impedit quia accusantium iste perferendis est
+          consectetur laborum et iusto laudantium animi perspiciatis.
+        </p>
+        <button>Click Me!</button>
+      </div>
     </div>
-    <h2>Hello There</h2>
-    <button>Click Me!</button>
     <script src="script.js"></script>
   </body>
 </html>
