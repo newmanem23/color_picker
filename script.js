@@ -134,7 +134,8 @@ function updateTiles() {
     colorHex.classList.add("hex-code");
 
     colorTile.classList.add("color-box");
-    colorTile.style.backgroundColor = color.currentHexCode;
+    colorHex.style.backgroundColor = colorTile.style.backgroundColor =
+      color.currentHexCode;
     if (color.textCode) {
       colorTile.classList.add(color.textCode);
     }
