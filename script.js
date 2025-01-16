@@ -1,3 +1,46 @@
+const COLORS = [
+  {
+    name: "Primary Color",
+    cssName: "--color-primary-texp",
+    baseHexCode: "#777777",
+    currentHexCode: "#777777",
+    cssId: "primaryColor",
+  },
+  {
+    name: "Text Color",
+    cssName: "--text-color",
+    baseHexCode: "#333333",
+    currentHexCode: "#333333",
+    cssId: "textColor",
+  },
+  {
+    name: "Medium Gray",
+    cssName: "--medium-gray-color",
+    baseHexCode: "#666666",
+    currentHexCode: "#333333",
+  },
+  {
+    name: "Light Gray",
+    cssName: "--light-gray-color",
+    baseHexCode: "#999999",
+    currentHexCode: "#999999",
+  },
+  {
+    name: "Lightest Gray",
+    cssName: "--lightest-gray-color",
+    baseHexCode: "#dddddd",
+    currentHexCode: "#dddddd",
+    textCode: "dark-text",
+  },
+  {
+    name: "Background Color",
+    cssName: "--background-color",
+    baseHexCode: "#fafafa",
+    currentHexCode: "#fafafa",
+    textCode: "dark-text",
+  },
+];
+
 // Function to convert hex to RGB
 function hexToRgb(hex) {
   hex = hex.replace("#", "");
@@ -61,24 +104,44 @@ function updateColors() {
 
   // Get the root element to update CSS variables
   const root = document.documentElement;
+  for (let color of COLORS) {
+    if (color.name === "Primary Color") {
+      root.style.setProperty(color.cssName, primaryColor);
+      color.currentHexCode = primaryColor;
+    } else {
+      color.currentHexCode = tintGrayWithPrimary(
+        color.baseHexCode,
+        primaryColor,
+      );
+    }
+  }
+  updateTiles();
+}
 
-  // Update the primary color
-  root.style.setProperty("--color-primary-texp", primaryColor);
+function updateTiles() {
+  const colorBoxes = document.querySelector(".color-boxes");
+  // Clear previous contents
+  colorBoxes.innerHTML = "";
 
-  // Grays and almost white color
-  const darkGray = tintGrayWithPrimary("#333333", primaryColor);
-  const mediumGray = tintGrayWithPrimary("#666666", primaryColor);
-  const lightGray = tintGrayWithPrimary("#999999", primaryColor);
-  const lightestGray = tintGrayWithPrimary("#dddddd", primaryColor);
-  const almostWhite = tintGrayWithPrimary("#f9f9f9", primaryColor); // Inverse tinting
+  for (let color of COLORS) {
+    const colorTile = document.createElement("div");
+    const colorName = document.createElement("p");
+    const colorHex = document.createElement("button");
 
-  // Update the CSS variables with the new color values
-  root.style.setProperty("--color-primary-texp", primaryColor);
-  root.style.setProperty("--text-color", darkGray);
-  root.style.setProperty("--medium-gray-color", mediumGray);
-  root.style.setProperty("--light-gray-color", lightGray);
-  root.style.setProperty("--lightest-gray-color", lightestGray);
-  root.style.setProperty("--background-color", almostWhite);
+    colorName.innerText = color.name;
+
+    colorHex.innerText = color.currentHexCode;
+    colorHex.classList.add("hex-code");
+
+    colorTile.classList.add("color-box");
+    colorTile.style.backgroundColor = color.currentHexCode;
+    if (color.textCode) {
+      colorTile.classList.add(color.textCode);
+    }
+    colorTile.appendChild(colorName);
+    colorTile.appendChild(colorHex);
+    colorBoxes.appendChild(colorTile);
+  }
 }
 
 // Add event listener to the button
