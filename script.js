@@ -113,6 +113,7 @@ function updateColors() {
         color.baseHexCode,
         primaryColor,
       );
+      root.style.setProperty(color.cssName, color.currentHexCode);
     }
   }
   updateTiles();
