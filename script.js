@@ -128,9 +128,19 @@ function updateTiles() {
     const colorTile = document.createElement("div");
     const colorName = document.createElement("p");
     const colorHex = document.createElement("button");
+    const colorToolTip = document.createElement("span");
+    colorHex.addEventListener("click", () => {
+      navigator.clipboard.writeText(color.currentHexCode);
+      colorToolTip.innerText = "Copied!";
+      setTimeout(() => {
+        colorToolTip.innerText = "Copy";
+      }, 2000);
+    });
+
+    colorToolTip.classList.add("tooltip");
+    colorToolTip.innerText = "Copy";
 
     colorName.innerText = color.name;
-
     colorHex.innerText = color.currentHexCode;
     colorHex.classList.add("hex-code");
 
@@ -142,6 +152,7 @@ function updateTiles() {
     }
     colorTile.appendChild(colorName);
     colorTile.appendChild(colorHex);
+    colorHex.appendChild(colorToolTip);
     colorBoxes.appendChild(colorTile);
   }
 }
