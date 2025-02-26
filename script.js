@@ -90,7 +90,8 @@ function isValidHex(hex) {
 }
 
 // Function to update the colors using CSS variables
-function updateColors() {
+function updateColors(e) {
+  e.preventDefault();
   const primaryColor = document.getElementById("colorInput").value;
   const messageDiv = document.getElementById("message");
 
@@ -158,9 +159,7 @@ function updateTiles() {
 }
 
 // Add event listener to the button
-document
-  .getElementById("generateButton")
-  .addEventListener("click", updateColors);
+document.querySelector("form").addEventListener("submit", updateColors);
 
 // Initialize with the default color
 updateColors();

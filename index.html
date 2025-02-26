@@ -10,17 +10,21 @@
     <div class="page">
       <div class="container">
         <h1>TalentEXP Brand Color Generator</h1>
-        <div class="input">
-          <label for="colorInput">Enter Hex Code:</label>
-          <input
-            type="text"
-            id="colorInput"
-            placeholder="#777777"
-            maxlength="7"
-            value="#777777"
-          />
-          <button class="generate" id="generateButton">Generate Colors</button>
-        </div>
+        <form action="">
+          <div class="input">
+            <label for="colorInput">Enter Hex Code:</label>
+            <input
+              type="text"
+              id="colorInput"
+              placeholder="#777777"
+              maxlength="7"
+              value="#777777"
+            />
+            <button type="submit" class="generate" id="generateButton">
+              Generate Colors
+            </button>
+          </div>
+        </form>
         <div id="message"></div>
         <div class="color-boxes"></div>
       </div>
