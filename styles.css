@@ -70,9 +70,13 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--lightest-gray-color);
   color: var(--medium-gray-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 .hex-code {
   color: inherit;
@@ -133,20 +137,16 @@ button:hover {
 }
 
 .tooltip {
-  visibility: hidden;
-  padding: 0.25rem 0.5rem;
-  position: absolute;
-  top: 100%;
-  left: 25%;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  position: relative;
   font-size: 0.75rem;
   text-align: center;
   border-radius: 5px;
   transition: opacity 0.3s;
   opacity: 85%;
+  display:none;
+  transition: display 1s;
 }
 
 button:hover .tooltip {
-  visibility: visible;
+  display:block;
 }
